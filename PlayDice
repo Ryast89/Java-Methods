@@ -1,0 +1,75 @@
+/****************************************************************************
+* Name:        PlayDice
+* Author:      modified by Lara Wear
+*              originally published in Java Programming Fundamentals
+*              by Kimberly Seefeld p 105 (Charles River Media Inc 2002)
+* Date:        Dec 24, 2004
+* Purpose:     Guess the sum of the dice rolled.
+*****************************************************************************/
+
+
+import javax.swing.*;
+
+public class PlayDice {
+
+	public static void main(String args[])
+	{
+		// Variable Declarations
+		int guessSum;
+		int rolledTotal;
+		String output = "";
+
+		//collect from user guess of sumSum
+		guessSum = guessTheDice();
+
+		// roll the dice in method and get rolled sum
+		rolledTotal = rollTheDice();
+
+		if(guessSum == rolledTotal) {
+		
+		    output="You guessed right!" + "  The die total is " + guessSum;
+		} else {
+		    output="Sorry.  The die total is: " + rolledTotal;
+		}
+
+		JOptionPane.showMessageDialog(null, output);
+
+		System.exit(0);
+	}//end main
+
+        // --------------------------------------------
+        // guessTheDice
+        // gets user guesses for each rolled die
+        // returns sum of guesses
+        // --------------------------------------------
+	public static int guessTheDice ()
+	{
+		int die;
+		
+		int total;
+
+		String dice;
+		
+		dice = JOptionPane.showInputDialog ("Guess the total of 3 dice - it will be between 3 and 18");
+		total = Integer.parseInt(dice);
+		
+		return total;
+	} // guessTheDice
+
+        // --------------------------------------------
+        // rollTheDice
+        // rolls dice and returns the sum
+        // --------------------------------------------
+	public static int rollTheDice()
+	{
+		int x;
+		int y;
+		int z;
+
+		//generate random numbers between 1-6 with Math.random
+		x = 1 + (int)(Math.random( ) * 6);
+		y = 1 + (int)(Math.random( ) * 6);
+		z = 1 + (int)(Math.random( ) * 6);
+		return (x + y + z);
+	}//  rollTheDice
+}
