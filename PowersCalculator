@@ -1,0 +1,73 @@
+/****************************************************************************
+* Name:        PowersCalculator
+* Author:      Lara Wear
+* Date:        Dec 20, 2004
+* Purpose:     Calculates different powers of a number.
+*****************************************************************************/
+
+import javax.swing.*;
+
+public class PowersCalculator {
+
+    // main
+    public static void main (String args[])
+    {
+        
+        double num;      // number entered by user
+        double p2;       // power of 2
+		double p3;
+		double p4;
+		double p5;
+        String input;    // user input
+        String output;   // output to display
+
+        // create an output area
+        JTextArea outputScreen = new JTextArea();
+
+        // get user input
+        input = JOptionPane.showInputDialog( "Enter a number: ");
+
+        // convert strings to doubles
+        num = Double.parseDouble(input);
+
+        // call method to calculate power of two
+        p2 = powerOfTwo(num);
+		p3 = powerOfThree(num);
+		p4 = powerOfFour(num);
+		p5 = powerOfFive(num);
+
+        // create the output string
+        output = num + " ^2 = " + p2 + "\n" + " ^3 = " + p3 + "\n" + " ^4 = " + p4 + "\n" + " ^5 = " + p5; 
+
+        // print output to screen
+        outputScreen.setText(output);
+        JOptionPane.showMessageDialog(null, outputScreen, "Powers", JOptionPane.INFORMATION_MESSAGE);
+
+        System.exit(0);
+    } // main
+
+
+    // methods
+    // -------
+
+    public static double powerOfTwo(double x)
+    {
+        return Math.pow(x,2);
+    } // powerOfTwo
+	
+	public static double powerOfThree(double x)
+    {
+        return Math.pow(x,3);
+    } // powerOfThree
+	
+	public static double powerOfFour(double x)
+    {
+        return Math.pow(x,4);
+    } // powerOfFour
+	
+	public static double powerOfFive(double x)
+    {
+        return Math.pow(x,5);
+    } // powerOfFive
+
+} // Powers
