@@ -1,0 +1,69 @@
+/****************************************************************************
+* Name:        CalcAverage
+* Author:      Lara Wear
+* Date:        Dec 20, 2004
+* Purpose:     Calculates the average of four numbers.
+*****************************************************************************/
+
+import javax.swing.*;
+
+public class CalcAverage {
+
+    // main
+    public static void main (String args[])
+    {
+        // four number entered by user
+        double num1 = 0;
+        double num2 = 0;
+        double num3 = 0;
+        double num4 = 0;
+        
+        // four user input values
+        String s1 = "";
+        String s2 = "";
+        String s3 = "";
+        String s4 = "";
+        
+        String output = "";  // output to display
+        double avg = 0;  // average
+
+        // create an output area
+        JTextArea outputScreen = new JTextArea();
+
+        // get the four numbers
+        s1 = JOptionPane.showInputDialog( "Enter the first number: ");
+        s2 = JOptionPane.showInputDialog( "Enter the second number: ");
+        s3 = JOptionPane.showInputDialog( "Enter the third number: ");
+        s4 = JOptionPane.showInputDialog( "Enter the fourth number: ");
+        
+        // convert strings to doubles
+        num1 = Double.parseDouble(s1);
+        num2 = Double.parseDouble(s2);
+        num3 = Double.parseDouble(s3);
+        num4 = Double.parseDouble(s4);
+        
+        // call method to calculate average
+        avg = average(num1, num2, num3, num4);
+
+        // create the output string
+        output = "The average is " + avg;
+
+        // print output to screen
+        outputScreen.setText(output);
+        JOptionPane.showMessageDialog(null, outputScreen, "Average", JOptionPane.INFORMATION_MESSAGE);
+
+        System.exit(0);
+    } // main
+
+
+    // methods
+    // -------
+
+    public static double average(double x1, double x2, double x3, double x4)
+    {
+	return((x1 + x2 + x3 + x4) / 4);
+	
+       // fill in the missing code here.
+    } // average
+
+} // CalcAverage
